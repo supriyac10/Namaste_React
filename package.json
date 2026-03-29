@@ -1,0 +1,32 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "React App by Supriya",
+  "keywords": [
+    "reactapp",
+    "supriya"
+  ],
+  "homepage": "https://github.com/supriyac10/Namaste_React#readme",
+  "bugs": {
+    "url": "https://github.com/supriyac10/Namaste_React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supriyac10/Namaste_React.git"
+  },
+  "license": "ISC",
+  "author": "Supriya C",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browserslist": [ "last 2 versions"]
+}
