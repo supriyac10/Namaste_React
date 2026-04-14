@@ -130,5 +130,96 @@ Episode 6
 1)As soon as page loads we make API and then render data
 2)As soon as page loads we render UI and then make API call again render data
 2nd approach is better, as it gives better UX as it will have skeleton.
-\*useEffect will be called after the component renderered
+\*useEffect will be called after the component is renderered
 --->Shimmer UI- before the API loads there will be dummy page
+
+Episode 7
+
+\*if there is no dependency array is called on every component render
+syntax: - useEffect (()=>{
+
+})
+\*if dependency array is empty [] => useEffect is called on initial render(just once)
+syntax: - useEffect (()=>{
+
+},[])
+\*if there is something in dependency array then it is called upated for any change of that something
+syntax: - useEffect (()=>{
+
+},[btnName])
+
+React Router
+\*use react-router-dom to add routing
+--> use createBrowserRouter to create router object
+-->use RouterProvider to render routes
+--->There are two types of routing
+*Client Side Routing-Single page application
+*Server Side Routing-Webforms
+
+Episode 8
+
+*Class based components
+--create a class and then extend it using React.Component
+*Life cycle of a class based component
+--Steps
+\*when the class is instantiated first constructor is called then render is called, then componentdidmount is called
+\*if there is a parent and child class then parent's componentdidmount is called at last.
+\*when there is a multiple child above order doesnt work as we think
+Below is the correct order of execution
+1)Parent Constructor
+2)Parent Render
+3)Child 1 Constructor
+4)Child 1 Render
+5)Child 2 Constructor
+6)Child 2 Render
+DOM is updated in single batch
+7)Child 1 componentdidmount
+8)Child 2 componentdidmount
+9)Parent componentdidmount
+why it works like this - because, to avoid the DOM manipulation again and again
+-->Component Life cycle
+----Mounting
+1)Constructor(dummy)
+2)Render
+3)Component Did Mount
+----Update
+1)Render
+2)Component Did Update
+----Unmount
+1)Component Will Unmount
+
+Episode 9
+
+1)following SRP- creating custom hooks
+2)Optimizing the code- chunking, code splitting, dynamic bundlling, lazy loading, on demand loading, dynamic import
+3)Suspense keyword is used to initiate loading of lazy loaded components
+
+Episode 10
+
+1.SASS and SCSS, styled components
+2.Tailwindcss- rapidly build modern websites without ever leaving html, postcss- a tool for transforming css with JS 3. pros and cons of tailwindcss
+Pros -*there is no movement between files and no more usage of css
+*very lightweight
+Cons - as we deal with classNme there will be lengthy code inside it
+
+Episode 11
+
+1)Enhancing the existing component is called higher order components
+2)Higher order components are pure functions - which will not change any exixting component
+3)Controlled by parent means that component is controlled
+4)props drilling-passing data from parent to deeper level children
+5)React Context solves problem of props drilling
+---->There is useContext hook that can be used in components instead passing props for irrelated components
+---->Consumer and Provider consumes and provides the specific values, basically provider can used to wrap the components according to data to be shown
+----> If we want the live data to shown or visible in the context then we can pas set function in provider
+
+Episode 12
+
+1)Redux- A JS library for predictable and maintainable global state management
+2)Redux is not a mandotory library
+3)If there is a need then we need to use redux
+4)It is a store that keeps all the data
+5)There are multiple slices to keep data separately
+6)write data-When click on a add to a cart button(for which we have a store-slice) it dispatches an action to a function(reducer) that function modifies the slice of that cart
+7)read data- we use selector to read the data that is called subscribing to the store
+8)in redux we mutate the original state but behind the scenes immer library helps to find the difference between the original and mutated state
